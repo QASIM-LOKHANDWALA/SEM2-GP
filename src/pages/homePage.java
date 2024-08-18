@@ -4,6 +4,7 @@ import dao.CompanyDao;
 import dao.EmployeeDao;
 import models.Company;
 import models.Employee;
+import utils.UIelements;
 
 import javax.swing.*;
 import java.awt.*;
@@ -155,18 +156,22 @@ public class homePage extends JFrame implements ActionListener {
         gbc.anchor = GridBagConstraints.LINE_START;
         loginPanel.add(loginPassword, gbc);
 
-        loginAdminButton = new JButton("Login as Admin");
+        // loginAdminButton = new JButton("Login as Admin");
+        loginAdminButton = UIelements.createStyledButton("Login as Admin");
+        loginAdminButton.setPreferredSize(new Dimension(loginPanel.getWidth(),40));
         loginAdminButton.addActionListener(this);
-        styleButton(loginAdminButton);
+        // styleButton(loginAdminButton);
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
         loginPanel.add(loginAdminButton, gbc);
 
-        loginEmployeeButton = new JButton("Login as Employee");
+        // loginEmployeeButton = new JButton("Login as Employee");
+        loginEmployeeButton = UIelements.createStyledButton("Login as Employee");
+        loginEmployeeButton.setPreferredSize(new Dimension(loginPanel.getWidth(),40));
         loginEmployeeButton.addActionListener(this);
-        styleButton(loginEmployeeButton);
+        // styleButton(loginEmployeeButton);
         gbc.gridy = 3;
         loginPanel.add(loginEmployeeButton, gbc);
 
@@ -229,9 +234,10 @@ public class homePage extends JFrame implements ActionListener {
         gbc.anchor = GridBagConstraints.LINE_START;
         registerPanel.add(registerAdminPassword, gbc);
 
-        registerCompanyButton = new JButton("Register Company");
+        // registerCompanyButton = new JButton("Register Company");
+        registerCompanyButton = UIelements.createStyledButton("Register Company");
         registerCompanyButton.addActionListener(this);
-        styleButton(registerCompanyButton);
+        // styleButton(registerCompanyButton);
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2;

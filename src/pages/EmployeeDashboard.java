@@ -9,6 +9,7 @@ import utils.BroadcastQueue;
 import utils.ButtonMap;
 import utils.EmployeeList;
 import utils.MessageQueue;
+import utils.UIelements;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -168,12 +169,13 @@ public class EmployeeDashboard extends JFrame {
             BorderFactory.createEmptyBorder(5, 10, 5, 10)
         ));
     
-        sendButton = new JButton("Send");
-        sendButton.setFont(TEXT_FONT);
-        sendButton.setBackground(ACCENT_COLOR);
-        sendButton.setForeground(SECONDARY_COLOR);
-        sendButton.setFocusPainted(false);
-        sendButton.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
+        // sendButton = new JButton("Send");
+        // sendButton.setFont(TEXT_FONT);
+        // sendButton.setBackground(ACCENT_COLOR);
+        // sendButton.setForeground(SECONDARY_COLOR);
+        // sendButton.setFocusPainted(false);
+        // sendButton.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
+        sendButton = UIelements.createStyledButton("Send");
         sendButton.addActionListener(e -> sendMessage());
     
         inputPanel.add(messageField, BorderLayout.CENTER);

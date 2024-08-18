@@ -6,6 +6,7 @@ import models.Broadcast;
 import models.Employee;
 import utils.BroadcastQueue;
 import utils.EmployeeList;
+import utils.UIelements;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -148,13 +149,14 @@ public class AdminDashboard extends JFrame implements ActionListener {
         employeeNameField = new JTextField(20);
         employeeUsernameField = new JTextField(20);
         employeePasswordField = new JPasswordField(20);
-        addEmployeeButton = new JButton("Add Employee");
+        // addEmployeeButton = new JButton("Add Employee");
 
-        panel.add(createLabeledField("Employee Name:    ", employeeNameField), gbc);
-        panel.add(createLabeledField("Employee Username:", employeeUsernameField), gbc);
-        panel.add(createLabeledField("Employee Password:", employeePasswordField), gbc);
+        panel.add(UIelements.createLabeledField("Employee Name:    ", employeeNameField), gbc);
+        panel.add(UIelements.createLabeledField("Employee Username:", employeeUsernameField), gbc);
+        panel.add(UIelements.createLabeledField("Employee Password:", employeePasswordField), gbc);
 
-        styleButton(addEmployeeButton);
+        addEmployeeButton = UIelements.createStyledButton("Add Employee");
+        // styleButton(addEmployeeButton);
         addEmployeeButton.addActionListener(this);
         panel.add(addEmployeeButton, gbc);
 
@@ -179,11 +181,11 @@ public class AdminDashboard extends JFrame implements ActionListener {
         gbc.insets = new Insets(5, 5, 5, 5);
 
         removeEmployeeUsernameField = new JTextField(20);
-        removeEmployeeButton = new JButton("Remove Employee");
+        // removeEmployeeButton = new JButton("Remove Employee");
 
-        panel.add(createLabeledField("Employee Username:", removeEmployeeUsernameField), gbc);
+        panel.add(UIelements.createLabeledField("Employee Username:", removeEmployeeUsernameField), gbc);
 
-        styleButton(removeEmployeeButton);
+        removeEmployeeButton = UIelements.createStyledButton("Remove Employee");
         removeEmployeeButton.addActionListener(this);
         panel.add(removeEmployeeButton, gbc);
 
@@ -208,8 +210,9 @@ public class AdminDashboard extends JFrame implements ActionListener {
         employeeTable.setFont(TEXT_FONT);
         JScrollPane tableScrollPane = new JScrollPane(employeeTable);
 
-        viewEmployeesButton = new JButton("Refresh Employee List");
-        styleButton(viewEmployeesButton);
+        // viewEmployeesButton = new JButton("Refresh Employee List");
+        // styleButton(viewEmployeesButton);
+        viewEmployeesButton = UIelements.createStyledButton("Refresh Employee List");
         viewEmployeesButton.addActionListener(this);
 
         panel.add(tableScrollPane, BorderLayout.CENTER);
@@ -238,8 +241,9 @@ public class AdminDashboard extends JFrame implements ActionListener {
         broadcastMessageArea.setFont(TEXT_FONT);
         JScrollPane messageScrollPane = new JScrollPane(broadcastMessageArea);
 
-        sendBroadcastButton = new JButton("Send Broadcast");
-        styleButton(sendBroadcastButton);
+        // sendBroadcastButton = new JButton("Send Broadcast");
+        // styleButton(sendBroadcastButton);
+        sendBroadcastButton = UIelements.createStyledButton("Send Broadcast");
         sendBroadcastButton.addActionListener(this);
 
         String[] columnNames = {"Message", "Timestamp"};
