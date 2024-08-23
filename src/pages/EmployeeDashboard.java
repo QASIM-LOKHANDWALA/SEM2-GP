@@ -369,7 +369,7 @@ public class EmployeeDashboard extends JFrame {
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                button.setForeground(SELECTED_BUTTON_COLOR);
+                button.setForeground(Color.gray);
             }
     
             @Override

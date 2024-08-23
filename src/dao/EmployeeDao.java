@@ -161,16 +161,21 @@ public class EmployeeDao {
     }
 
     public boolean deleteEmployee(int employeeId) {
-        String query = "DELETE FROM Employees WHERE employee_id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, employeeId);
-            int result = stmt.executeUpdate();
+        String callProcedureQuery = "{CALL deleteEmployee(?)}";
+        
+        try (PreparedStatement callProcedureStmt = connection.prepareStatement(callProcedureQuery)) {
+            
+            callProcedureStmt.setInt(1, employeeId);
+            int result = callProcedureStmt.executeUpdate();
+            
             return result > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
     }
+    
+    
 
     public List<Employee> getAllEmployees() {
         List<Employee> employees = new ArrayList<>();
